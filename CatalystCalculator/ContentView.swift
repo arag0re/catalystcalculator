@@ -44,7 +44,7 @@ struct ContentView: View {
                 }.foregroundColor(.black)
                 Spacer()
             }
-            Spacer()
+            
             HStack {
                 Spacer()
                 Button(action: {
@@ -162,7 +162,7 @@ struct ContentView: View {
                 Button(action: {
                     if self.display == "0" {
                     } else {
-                        self.display = self.display + "7"
+                        self.display = self.display + "0"
                     }
                     
                 }){

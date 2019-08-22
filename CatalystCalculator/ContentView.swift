@@ -10,9 +10,35 @@ import SwiftUI
 
 struct ContentView: View {
     @State var display = "0"
+    @State var x = 0.0
+    @State var y = 0.0
+    @State var clipboard = ""
+    
+
     
     func resetAllValues(){
         self.display = "0"
+        self.clipboard = ""
+        self.afterCalcReset()
+    }
+    
+    func afterCalcReset(){
+        self.x = 0.0
+        self.y = 0.0
+    }
+    
+    func setOperation(operation: String) -> Double {
+        var returnval: Double?
+        if self.x != 0.0 && self.y != 0.0 {
+            switch(operation){
+                case "add": returnval = (self.x + self.y); self.afterCalcReset();
+                case "sub": returnval = (self.x - self.y); self.afterCalcReset()
+                case "div": returnval = (self.x / self.y); self.afterCalcReset()
+                case "mult": returnval = (self.x * self.y); self.afterCalcReset()
+                default: break
+            }
+        }
+        return returnval!
     }
     
     var body: some View {
@@ -27,20 +53,52 @@ struct ContentView: View {
             Spacer()
             HStack {
                 Spacer()
-                Button(action: {self.resetAllValues()}){
-                        ButtonReset()
+                Button(action: {
+                    self.resetAllValues()
+                    print("all values were set to zero or empty String!")
+                }){
+                    ButtonReset()
                 }.foregroundColor(.black)
                 Spacer()
-                Button(action: {}){
-                        ButtonPlusMinus()
+                Button(action: {
+                    if !self.display.contains("-") && self.display != "" {
+                        self.display = "-" + self.display
+                    } else if self.display.contains("-") {
+                        self.display = self.display.replacingOccurrences(of: "-", with: "" , options: .literal, range: nil)
+                    }
+                }){
+                    ButtonPlusMinus()
                 }.foregroundColor(.black)
                 Spacer()
-                Button(action: {}){
-                        ButtonPercent()
+                Button(action: {
+                    if  self.y == 0.0 && self.x == 0.0 {
+                        self.x = Double(self.display)!
+                        self.y = 100.0
+                        var str = "\(self.setOperation(operation: "div"))"
+                        if str.suffix(2) == ".0" {
+                            str = str.replacingOccurrences(of: ".0", with: "" , options: .literal, range: nil)
+                        }
+                        self.display = str
+                    }
+                }){
+                    ButtonPercent()
                 }.foregroundColor(.black)
                 Spacer()
-                Button(action: {}){
-                        ButtonDiv()
+                Button(action: {
+                    self.clipboard = "div"
+                    if self.x == 0.0 && self.y == 0.0 {
+                        self.x = Double(self.display)!
+                        self.display = "0"
+                    } else if self.x != 0.0 && self.y == 0.0 {
+                        self.y = Double(self.display)!
+                        var str = "\(self.setOperation(operation: "div"))"
+                        if str.suffix(2) == ".0" {
+                            str = str.replacingOccurrences(of: ".0", with: "" , options: .literal, range: nil)
+                        }
+                        self.display = str
+                    }
+                }){
+                    ButtonDiv()
                 }.foregroundColor(.black)
                 Spacer()
             }
@@ -74,10 +132,23 @@ struct ContentView: View {
                     self.display = self.display + "9"
                 }
                 }){
-                        NumberNine()
+                    NumberNine()
                 }.foregroundColor(.black)
                 Spacer()
-                Button(action: {}){
+                Button(action: {
+                    self.clipboard = "mult"
+                    if self.x == 0.0 && self.y == 0.0 {
+                        self.x = Double(self.display)!
+                        self.display = "0"
+                    } else if self.x != 0.0 && self.y == 0.0 {
+                        self.y = Double(self.display)!
+                        var str = "\(self.setOperation(operation: "mult"))"
+                        if str.suffix(2) == ".0" {
+                            str = str.replacingOccurrences(of: ".0", with: "" , options: .literal, range: nil)
+                        }
+                        self.display = str
+                    }
+                }){
                         ButtonMult()
                 }.foregroundColor(.black)
                 Spacer()
@@ -115,7 +186,20 @@ struct ContentView: View {
                         NumberSix()
                 }.foregroundColor(.black)
                 Spacer()
-                Button(action: {}){
+                Button(action: {
+                    self.clipboard = "sub"
+                    if self.x == 0.0 && self.y == 0.0 {
+                        self.x = Double(self.display)!
+                        self.display = "0"
+                    } else if self.x != 0.0 && self.y == 0.0 {
+                        self.y = Double(self.display)!
+                        var str = "\(self.setOperation(operation: "sub"))"
+                        if str.suffix(2) == ".0" {
+                            str = str.replacingOccurrences(of: ".0", with: "" , options: .literal, range: nil)
+                        }
+                        self.display = str
+                    }
+                }){
                         ButtonMinus()
                 }.foregroundColor(.black)
                 
@@ -152,7 +236,20 @@ struct ContentView: View {
                         NumberThree()
                 }.foregroundColor(.black)
                 Spacer()
-                Button(action: {}){
+                Button(action: {
+                    self.clipboard = "add"
+                    if self.x == 0.0 && self.y == 0.0 {
+                        self.x = Double(self.display)!
+                        self.display = "0"
+                    } else if self.x != 0.0 && self.y == 0.0 {
+                        self.y = Double(self.display)!
+                        var str = "\(self.setOperation(operation: "add"))"
+                        if str.suffix(2) == ".0" {
+                            str = str.replacingOccurrences(of: ".0", with: "" , options: .literal, range: nil)
+                        }
+                        self.display = str
+                    }
+                }){
                         ButtonPlus()
                 }.foregroundColor(.black)
                 Spacer()
@@ -172,14 +269,23 @@ struct ContentView: View {
                 Text("")
                 Spacer()
                 Button(action: {
-                    if !self.display.contains(",") {
-                        self.display = self.display + ","
+                    if !self.display.contains(".") {
+                        self.display = self.display + "."
                     }
                 }){
                         ButtonCommata()
                 }.foregroundColor(.black)
                 Spacer()
-                Button(action: {}){
+                Button(action: {
+                    if self.x != 0.0 && self.y == 0.0 {
+                        self.y = Double(self.display)!
+                        var str = "\(self.setOperation(operation: self.clipboard))"
+                        if str.suffix(2) == ".0" {
+                            str = str.replacingOccurrences(of: ".0", with: "" , options: .literal, range: nil)
+                        }
+                        self.display = str
+                    }
+                }){
                         ButtonEquals()
                 }.foregroundColor(.black)
                 Spacer()

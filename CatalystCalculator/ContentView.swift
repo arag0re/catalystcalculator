@@ -39,18 +39,15 @@ struct ContentView: View {
     ///function for calculating the result for each operation
     func setOperation(operation: String) -> Double {
         var returnval: Double?
-        print("gewählte operation: \(operation)")
-        print("x: \(self.x), y: \(self.y)")
         if self.x != 0.0 && self.y != 0.0 {
             switch(operation){
-                case "add": returnval = (self.x + self.y); self.afterCalcReset();
-                case "sub": returnval = (self.x - self.y); self.afterCalcReset();
-                case "div": returnval = (self.x / self.y); self.afterCalcReset();
-                case "mult": returnval = (self.x * self.y); self.afterCalcReset();
+                case "add": returnval = (self.x + self.y); print("\(self.x) +  \(self.y) = \(returnval!)"); self.afterCalcReset();
+                case "sub": returnval = (self.x - self.y); print("\(self.x) - \(self.y) = \(returnval!)"); self.afterCalcReset();
+                case "div": returnval = (self.x / self.y); print("\(self.x) / \(self.y) = \(returnval!)"); self.afterCalcReset();
+                case "mult": returnval = (self.x * self.y); print("\(self.x) x \(self.y) = \(returnval!)"); self.afterCalcReset();
                 default: break
             }
         }
-        print("\(returnval!)")
         return returnval!
     }
     

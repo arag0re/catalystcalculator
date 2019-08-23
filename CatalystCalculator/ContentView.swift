@@ -102,9 +102,9 @@ struct ContentView: View {
     func numberButton(num: String){
         self.resetButton = "C"
         if self.display == "0" || self.display == "-0"{
-            self.display = num
-        } else {
             self.display = self.display.replacingOccurrences(of: "0", with: num , options: .literal, range: nil)
+        } else {
+            self.display = self.display + num
         }
     }
     

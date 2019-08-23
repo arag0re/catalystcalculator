@@ -78,7 +78,7 @@ struct ContentView: View {
         if self.x == 0.0 && self.y == 0.0 {
             self.x = Double(self.display)!
             self.display = "0"
-        } else if self.x != 0.0 && self.y == 0.0 && self.display != "0"{
+        } else if self.x != 0.0 && self.y == 0.0 && self.display != "0" {
             self.y = Double(self.display)!
             var str = "\(self.setOperation(operation: operation))"
             if str.suffix(2) == ".0" {
@@ -148,10 +148,10 @@ struct ContentView: View {
                 Spacer()
                 Button(action: {
                     self.resetButton = "C"
-                    if self.display == "0" {
+                    if self.display == "0" || self.display == "-0"{
                         self.display = "7"
                     } else {
-                        self.display = self.display + "7"
+                        self.display = self.display.replacingOccurrences(of: "0", with: "7" , options: .literal, range: nil)
                     }
                 }){
                 NumberSeven()
@@ -159,8 +159,8 @@ struct ContentView: View {
                 Spacer()
                 Button(action: {
                     self.resetButton = "C"
-                    if self.display == "0" {
-                        self.display = "8"
+                    if self.display == "0" || self.display == "-0"{
+                        self.display = self.display.replacingOccurrences(of: "0", with: "8" , options: .literal, range: nil)
                     } else {
                         self.display = self.display + "8"
                     }
@@ -170,8 +170,8 @@ struct ContentView: View {
                 Spacer()
                 Button(action: {
                     self.resetButton = "C"
-                    if self.display == "0" {
-                        self.display = "9"
+                    if self.display == "0" || self.display == "-0"{
+                        self.display = self.display.replacingOccurrences(of: "0", with: "9" , options: .literal, range: nil)
                     } else {
                         self.display = self.display + "9"
                     }
@@ -191,10 +191,10 @@ struct ContentView: View {
                 Spacer()
                 Button(action: {
                     self.resetButton = "C"
-                if self.display == "0" {
+                if self.display == "0" || self.display == "-0"{
                     self.display = "4"
                 } else {
-                    self.display = self.display + "4"
+                    self.display = self.display.replacingOccurrences(of: "0", with: "4" , options: .literal, range: nil)
                 }
                 }){
                 NumberFour()
@@ -202,8 +202,8 @@ struct ContentView: View {
                Spacer()
                 Button(action: {
                     self.resetButton = "C"
-                if self.display == "0" {
-                    self.display = "5"
+                if self.display == "0" || self.display == "-0"{
+                    self.display = self.display.replacingOccurrences(of: "0", with: "5" , options: .literal, range: nil)
                 } else {
                     self.display = self.display + "5"
                 }
@@ -213,8 +213,8 @@ struct ContentView: View {
                 Spacer()
                 Button(action: {
                     self.resetButton = "C"
-                if self.display == "0" {
-                    self.display = "6"
+                if self.display == "0" || self.display == "-0"{
+                    self.display = self.display.replacingOccurrences(of: "0", with: "6" , options: .literal, range: nil)
                 } else {
                     self.display = self.display + "6"
                 }
@@ -234,8 +234,8 @@ struct ContentView: View {
                 Spacer()
                 Button(action: {
                     self.resetButton = "C"
-                    if self.display == "0" {
-                        self.display = "1"
+                    if self.display == "0" || self.display == "-0"{
+                        self.display = self.display.replacingOccurrences(of: "0", with: "1" , options: .literal, range: nil)
                     } else {
                         self.display = self.display + "1"
                     }}){
@@ -244,8 +244,8 @@ struct ContentView: View {
                 Spacer()
                 Button(action: {
                     self.resetButton = "C"
-                    if self.display == "0" {
-                        self.display = "2"
+                    if self.display == "0" || self.display == "-0"{
+                        self.display = self.display.replacingOccurrences(of: "0", with: "2" , options: .literal, range: nil)
                     } else {
                         self.display = self.display + "2"
                     }
@@ -255,8 +255,8 @@ struct ContentView: View {
                 Spacer()
                 Button(action: {
                     self.resetButton = "C"
-                    if self.display == "0" {
-                        self.display = "3"
+                    if self.display == "0" || self.display == "-0"{
+                        self.display = self.display.replacingOccurrences(of: "0", with: "3" , options: .literal, range: nil)
                     } else {
                         self.display = self.display + "3"
                     }
@@ -275,7 +275,7 @@ struct ContentView: View {
             HStack {
                 Spacer()
                 Button(action: {
-                    if self.display == "0" {
+                    if self.display == "0" || self.display == "-0"{
                     
                     } else {
                         self.display = self.display + "0"

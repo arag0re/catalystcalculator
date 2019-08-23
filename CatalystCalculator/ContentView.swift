@@ -99,6 +99,15 @@ struct ContentView: View {
         }
     }
     
+    func numberButton(num: String){
+        self.resetButton = "C"
+        if self.display == "0" || self.display == "-0"{
+            self.display = num
+        } else {
+            self.display = self.display.replacingOccurrences(of: "0", with: num , options: .literal, range: nil)
+        }
+    }
+    
     var body: some View {
         VStack {
             Spacer()
@@ -147,34 +156,19 @@ struct ContentView: View {
             HStack {
                 Spacer()
                 Button(action: {
-                    self.resetButton = "C"
-                    if self.display == "0" || self.display == "-0"{
-                        self.display = "7"
-                    } else {
-                        self.display = self.display.replacingOccurrences(of: "0", with: "7" , options: .literal, range: nil)
-                    }
+                self.numberButton(num: "7")
                 }){
                 NumberSeven()
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
-                    self.resetButton = "C"
-                    if self.display == "0" || self.display == "-0"{
-                        self.display = self.display.replacingOccurrences(of: "0", with: "8" , options: .literal, range: nil)
-                    } else {
-                        self.display = self.display + "8"
-                    }
+                self.numberButton(num: "8")
                 }){
                 NumberEight()
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
-                    self.resetButton = "C"
-                    if self.display == "0" || self.display == "-0"{
-                        self.display = self.display.replacingOccurrences(of: "0", with: "9" , options: .literal, range: nil)
-                    } else {
-                        self.display = self.display + "9"
-                    }
+                self.numberButton(num: "9")
                 }){
                 NumberNine()
                 }.foregroundColor(.black)
@@ -190,34 +184,19 @@ struct ContentView: View {
             HStack {
                 Spacer()
                 Button(action: {
-                    self.resetButton = "C"
-                if self.display == "0" || self.display == "-0"{
-                    self.display = "4"
-                } else {
-                    self.display = self.display.replacingOccurrences(of: "0", with: "4" , options: .literal, range: nil)
-                }
+                self.numberButton(num: "4")
                 }){
                 NumberFour()
                 }.foregroundColor(.black)
                Spacer()
                 Button(action: {
-                    self.resetButton = "C"
-                if self.display == "0" || self.display == "-0"{
-                    self.display = self.display.replacingOccurrences(of: "0", with: "5" , options: .literal, range: nil)
-                } else {
-                    self.display = self.display + "5"
-                }
+                self.numberButton(num: "5")
                 }){
                 NumberFive()
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
-                    self.resetButton = "C"
-                if self.display == "0" || self.display == "-0"{
-                    self.display = self.display.replacingOccurrences(of: "0", with: "6" , options: .literal, range: nil)
-                } else {
-                    self.display = self.display + "6"
-                }
+                self.numberButton(num: "6")
                 }){
                 NumberSix()
                 }.foregroundColor(.black)
@@ -233,35 +212,21 @@ struct ContentView: View {
             HStack {
                 Spacer()
                 Button(action: {
-                    self.resetButton = "C"
-                    if self.display == "0" || self.display == "-0"{
-                        self.display = self.display.replacingOccurrences(of: "0", with: "1" , options: .literal, range: nil)
-                    } else {
-                        self.display = self.display + "1"
-                    }}){
+                self.numberButton(num: "1")
+                }){
                 NumberOne()
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
-                    self.resetButton = "C"
-                    if self.display == "0" || self.display == "-0"{
-                        self.display = self.display.replacingOccurrences(of: "0", with: "2" , options: .literal, range: nil)
-                    } else {
-                        self.display = self.display + "2"
-                    }
+                self.numberButton(num: "2")
                 }){
                 NumberTwo()
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
-                    self.resetButton = "C"
-                    if self.display == "0" || self.display == "-0"{
-                        self.display = self.display.replacingOccurrences(of: "0", with: "3" , options: .literal, range: nil)
-                    } else {
-                        self.display = self.display + "3"
-                    }
+                self.numberButton(num: "3")
                 }){
-                    NumberThree()
+                NumberThree()
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {

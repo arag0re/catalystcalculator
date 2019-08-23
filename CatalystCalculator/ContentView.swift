@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     
+    ///all variables needed for catalystcalculator
     @State var display = "0"
     @State var x = 0.0
     @State var y = 0.0
@@ -72,59 +73,14 @@ struct ContentView: View {
         }
     }
     
-    func divButtonPressed(){
-        self.clipboard = "div"
+    func operationButtonPressed(operation: String) {
+        self.clipboard = operation
         if self.x == 0.0 && self.y == 0.0 {
             self.x = Double(self.display)!
             self.display = "0"
         } else if self.x != 0.0 && self.y == 0.0 {
             self.y = Double(self.display)!
-            var str = "\(self.setOperation(operation: "div"))"
-            if str.suffix(2) == ".0" {
-                str = str.replacingOccurrences(of: ".0", with: "" , options: .literal, range: nil)
-            }
-            self.display = str
-        }
-    }
-    
-    func multButtonPressed() {
-        self.clipboard = "mult"
-        if self.x == 0.0 && self.y == 0.0 {
-            self.x = Double(self.display)!
-            self.display = "0"
-        } else if self.x != 0.0 && self.y == 0.0 {
-            self.y = Double(self.display)!
-            var str = "\(self.setOperation(operation: "mult"))"
-            if str.suffix(2) == ".0" {
-                str = str.replacingOccurrences(of: ".0", with: "" , options: .literal, range: nil)
-            }
-            self.display = str
-        }
-    }
-    
-    func minusButtonPressed() {
-        self.clipboard = "sub"
-        if self.x == 0.0 && self.y == 0.0 {
-            self.x = Double(self.display)!
-            self.display = "0"
-        } else if self.x != 0.0 && self.y == 0.0 {
-            self.y = Double(self.display)!
-            var str = "\(self.setOperation(operation: "sub"))"
-            if str.suffix(2) == ".0" {
-                str = str.replacingOccurrences(of: ".0", with: "" , options: .literal, range: nil)
-            }
-            self.display = str
-        }
-    }
-    
-    func plusButtonPressed() {
-        self.clipboard = "add"
-        if self.x == 0.0 && self.y == 0.0 {
-            self.x = Double(self.display)!
-            self.display = "0"
-        } else if self.x != 0.0 && self.y == 0.0 {
-            self.y = Double(self.display)!
-            var str = "\(self.setOperation(operation: "add"))"
+            var str = "\(self.setOperation(operation: operation))"
             if str.suffix(2) == ".0" {
                 str = str.replacingOccurrences(of: ".0", with: "" , options: .literal, range: nil)
             }
@@ -182,7 +138,7 @@ struct ContentView: View {
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
-                self.divButtonPressed()
+                self.operationButtonPressed(operation: "div")
                 }){
                 ButtonDiv()
                 }.foregroundColor(.black)
@@ -225,7 +181,7 @@ struct ContentView: View {
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
-                self.multButtonPressed()
+                self.operationButtonPressed(operation: "mult")
                 }){
                 ButtonMult()
                 }.foregroundColor(.black)
@@ -268,7 +224,7 @@ struct ContentView: View {
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
-                    self.minusButtonPressed()
+                self.operationButtonPressed(operation: "sub")
                 }){
                 ButtonMinus()
                 }.foregroundColor(.black)
@@ -306,11 +262,11 @@ struct ContentView: View {
                         self.display = self.display + "3"
                     }
                 }){
-                NumberThree()
+                    NumberThree()
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
-                self.plusButtonPressed()
+                self.operationButtonPressed(operation: "add")
                 }){
                 ButtonPlus()
                 }.foregroundColor(.black)

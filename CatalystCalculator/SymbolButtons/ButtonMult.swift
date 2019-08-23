@@ -13,13 +13,12 @@ struct ButtonMult: View {
         VStack{
             Image("Button")
                 .clipShape(Circle())
-                .overlay(
-                    Circle().stroke(Color.orange,lineWidth: 9))
+                .overlay(Circle().stroke(Color.orange,lineWidth: 9))
                 .shadow(radius: 5)
             Text("x")
-            .offset(x: 0, y: -71)
-            .foregroundColor(.orange)
-            .font(.largeTitle)
+                .offset(x: 0, y: -71)
+                .foregroundColor(.orange)
+                .font(.largeTitle)
         }
     }
 }

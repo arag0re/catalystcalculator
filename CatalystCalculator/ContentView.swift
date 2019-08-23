@@ -9,26 +9,34 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     @State var display = "0"
     @State var x = 0.0
     @State var y = 0.0
     @State var clipboard = ""
+    @State var resetButton = "AC"
     
-
-    
+    ///func that resets different parameters depending on state of reset-button
     func resetAllValues(){
-        self.display = "0"
-        self.clipboard = ""
-        self.afterCalcReset()
-        print("all values were set to zero or empty String!")
+        if self.resetButton == "AC" {
+            self.display = "0"
+            self.clipboard = ""
+            self.afterCalcReset()
+            self.resetButton = "AC"
+            print("all values were set to zero or empty String!")
+        } else {
+            self.display = "0"
+            self.resetButton = "AC"
+        }
     }
     
+    ///reset the calc-variables so that the intialization doesn't go wrong
     func afterCalcReset(){
         self.x = 0.0
         self.y = 0.0
-       // print("x: \(self.x), y: \(self.y)")
     }
     
+    ///function for calculating the result for each operation
     func setOperation(operation: String) -> Double {
         var returnval: Double?
         print("gewählte operation: \(operation)")
@@ -46,8 +54,99 @@ struct ContentView: View {
         return returnval!
     }
     
+
+    func plusMinusButtonPressed(){
+        if !self.display.contains("-") && self.display != "" {
+            self.display = "-" + self.display
+        } else if self.display.contains("-") {
+            self.display = self.display.replacingOccurrences(of: "-", with: "" , options: .literal, range: nil)
+        }
+    }
+    
+    func percentButtonPressed() {
+        if  self.y == 0.0 && self.x == 0.0 {
+            self.x = Double(self.display)!
+            self.y = 100.0
+            var str = "\(self.setOperation(operation: "div"))"
+            if str.suffix(2) == ".0" {
+                str = str.replacingOccurrences(of: ".0", with: "" , options: .literal, range: nil)
+            }
+            self.display = str
+        }
+    }
+    
+    func divButtonPressed(){
+        self.clipboard = "div"
+        if self.x == 0.0 && self.y == 0.0 {
+            self.x = Double(self.display)!
+            self.display = "0"
+        } else if self.x != 0.0 && self.y == 0.0 {
+            self.y = Double(self.display)!
+            var str = "\(self.setOperation(operation: "div"))"
+            if str.suffix(2) == ".0" {
+                str = str.replacingOccurrences(of: ".0", with: "" , options: .literal, range: nil)
+            }
+            self.display = str
+        }
+    }
+    
+    func multButtonPressed() {
+        self.clipboard = "mult"
+        if self.x == 0.0 && self.y == 0.0 {
+            self.x = Double(self.display)!
+            self.display = "0"
+        } else if self.x != 0.0 && self.y == 0.0 {
+            self.y = Double(self.display)!
+            var str = "\(self.setOperation(operation: "mult"))"
+            if str.suffix(2) == ".0" {
+                str = str.replacingOccurrences(of: ".0", with: "" , options: .literal, range: nil)
+            }
+            self.display = str
+        }
+    }
+    
+    func minusButtonPressed() {
+        self.clipboard = "sub"
+        if self.x == 0.0 && self.y == 0.0 {
+            self.x = Double(self.display)!
+            self.display = "0"
+        } else if self.x != 0.0 && self.y == 0.0 {
+            self.y = Double(self.display)!
+            var str = "\(self.setOperation(operation: "sub"))"
+            if str.suffix(2) == ".0" {
+                str = str.replacingOccurrences(of: ".0", with: "" , options: .literal, range: nil)
+            }
+            self.display = str
+        }
+    }
+    
+    func plusButtonPressed() {
+        self.clipboard = "add"
+        if self.x == 0.0 && self.y == 0.0 {
+            self.x = Double(self.display)!
+            self.display = "0"
+        } else if self.x != 0.0 && self.y == 0.0 {
+            self.y = Double(self.display)!
+            var str = "\(self.setOperation(operation: "add"))"
+            if str.suffix(2) == ".0" {
+                str = str.replacingOccurrences(of: ".0", with: "" , options: .literal, range: nil)
+            }
+            self.display = str
+        }
+    }
+    
+    func equalsButtonPressed() {
+        if self.x != 0.0 && self.y == 0.0 {
+            self.y = Double(self.display)!
+            var str = "\(self.setOperation(operation: self.clipboard))"
+            if str.suffix(2) == ".0" {
+                str = str.replacingOccurrences(of: ".0", with: "" , options: .literal, range: nil)
+            }
+            self.display = str
+        }
+    }
+    
     var body: some View {
-       
         VStack {
             Spacer()
             HStack {
@@ -64,50 +163,31 @@ struct ContentView: View {
             HStack {
                 Spacer()
                 Button(action: {
-                    self.resetAllValues()
+                self.resetAllValues()
                 }){
-                    ButtonReset()
+                ButtonReset()
+                Text(self.resetButton)
+                    .offset(x: 0, y: -71)
+                    .foregroundColor(.purple)
+                    .font(.largeTitle)
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
-                    if !self.display.contains("-") && self.display != "" {
-                        self.display = "-" + self.display
-                    } else if self.display.contains("-") {
-                        self.display = self.display.replacingOccurrences(of: "-", with: "" , options: .literal, range: nil)
-                    }
+                self.plusMinusButtonPressed()
                 }){
-                    ButtonPlusMinus()
+                ButtonPlusMinus()
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
-                    if  self.y == 0.0 && self.x == 0.0 {
-                        self.x = Double(self.display)!
-                        self.y = 100.0
-                        var str = "\(self.setOperation(operation: "div"))"
-                        if str.suffix(2) == ".0" {
-                            str = str.replacingOccurrences(of: ".0", with: "" , options: .literal, range: nil)
-                        }
-                        self.display = str
-                    }
+                self.percentButtonPressed()
                 }){
-                    ButtonPercent()
+                ButtonPercent()
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
-                    self.clipboard = "div"
-                    if self.x == 0.0 && self.y == 0.0 {
-                        self.x = Double(self.display)!
-                        self.display = "0"
-                    } else if self.x != 0.0 && self.y == 0.0 {
-                        self.y = Double(self.display)!
-                        var str = "\(self.setOperation(operation: "div"))"
-                        if str.suffix(2) == ".0" {
-                            str = str.replacingOccurrences(of: ".0", with: "" , options: .literal, range: nil)
-                        }
-                        self.display = str
-                    }
+                self.divButtonPressed()
                 }){
-                    ButtonDiv()
+                ButtonDiv()
                 }.foregroundColor(.black)
                 Spacer()
             }
@@ -115,50 +195,42 @@ struct ContentView: View {
             HStack {
                 Spacer()
                 Button(action: {
+                    self.resetButton = "C"
                     if self.display == "0" {
                         self.display = "7"
                     } else {
                         self.display = self.display + "7"
                     }
-                    }){
-                        NumberSeven()
+                }){
+                NumberSeven()
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
+                    self.resetButton = "C"
                     if self.display == "0" {
                         self.display = "8"
                     } else {
                         self.display = self.display + "8"
                     }
                 }){
-                        NumberEight()
+                NumberEight()
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
-                if self.display == "0" {
-                    self.display = "9"
-                } else {
-                    self.display = self.display + "9"
-                }
-                }){
-                    NumberNine()
-                }.foregroundColor(.black)
-                Spacer()
-                Button(action: {
-                    self.clipboard = "mult"
-                    if self.x == 0.0 && self.y == 0.0 {
-                        self.x = Double(self.display)!
-                        self.display = "0"
-                    } else if self.x != 0.0 && self.y == 0.0 {
-                        self.y = Double(self.display)!
-                        var str = "\(self.setOperation(operation: "mult"))"
-                        if str.suffix(2) == ".0" {
-                            str = str.replacingOccurrences(of: ".0", with: "" , options: .literal, range: nil)
-                        }
-                        self.display = str
+                    self.resetButton = "C"
+                    if self.display == "0" {
+                        self.display = "9"
+                    } else {
+                        self.display = self.display + "9"
                     }
                 }){
-                        ButtonMult()
+                NumberNine()
+                }.foregroundColor(.black)
+                Spacer()
+                Button(action: {
+                self.multButtonPressed()
+                }){
+                ButtonMult()
                 }.foregroundColor(.black)
                 Spacer()
             }
@@ -166,99 +238,84 @@ struct ContentView: View {
             HStack {
                 Spacer()
                 Button(action: {
+                    self.resetButton = "C"
                 if self.display == "0" {
                     self.display = "4"
                 } else {
                     self.display = self.display + "4"
                 }
                 }){
-                        NumberFour()
+                NumberFour()
                 }.foregroundColor(.black)
                Spacer()
                 Button(action: {
+                    self.resetButton = "C"
                 if self.display == "0" {
                     self.display = "5"
                 } else {
                     self.display = self.display + "5"
                 }
                 }){
-                        NumberFive()
+                NumberFive()
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
+                    self.resetButton = "C"
                 if self.display == "0" {
                     self.display = "6"
                 } else {
                     self.display = self.display + "6"
                 }
                 }){
-                        NumberSix()
+                NumberSix()
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
-                    self.clipboard = "sub"
-                    if self.x == 0.0 && self.y == 0.0 {
-                        self.x = Double(self.display)!
-                        self.display = "0"
-                    } else if self.x != 0.0 && self.y == 0.0 {
-                        self.y = Double(self.display)!
-                        var str = "\(self.setOperation(operation: "sub"))"
-                        if str.suffix(2) == ".0" {
-                            str = str.replacingOccurrences(of: ".0", with: "" , options: .literal, range: nil)
-                        }
-                        self.display = str
-                    }
+                    self.minusButtonPressed()
                 }){
-                        ButtonMinus()
+                ButtonMinus()
                 }.foregroundColor(.black)
                 Spacer()
             }
             Spacer()
             HStack {
                 Spacer()
-                Button(action: {if self.display == "0" {
+                Button(action: {
+                    self.resetButton = "C"
+                    if self.display == "0" {
                         self.display = "1"
                     } else {
                         self.display = self.display + "1"
                     }}){
-                        NumberOne()
+                NumberOne()
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
+                    self.resetButton = "C"
                     if self.display == "0" {
                         self.display = "2"
                     } else {
                         self.display = self.display + "2"
                     }
                 }){
-                        NumberTwo()
+                NumberTwo()
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
+                    self.resetButton = "C"
                     if self.display == "0" {
                         self.display = "3"
                     } else {
                         self.display = self.display + "3"
                     }
                 }){
-                        NumberThree()
+                NumberThree()
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
-                    self.clipboard = "add"
-                    if self.x == 0.0 && self.y == 0.0 {
-                        self.x = Double(self.display)!
-                        self.display = "0"
-                    } else if self.x != 0.0 && self.y == 0.0 {
-                        self.y = Double(self.display)!
-                        var str = "\(self.setOperation(operation: "add"))"
-                        if str.suffix(2) == ".0" {
-                            str = str.replacingOccurrences(of: ".0", with: "" , options: .literal, range: nil)
-                        }
-                        self.display = str
-                    }
+                self.plusButtonPressed()
                 }){
-                        ButtonPlus()
+                ButtonPlus()
                 }.foregroundColor(.black)
                 Spacer()
             }
@@ -267,12 +324,12 @@ struct ContentView: View {
                 Spacer()
                 Button(action: {
                     if self.display == "0" {
+                    
                     } else {
                         self.display = self.display + "0"
                     }
-                    
                 }){
-                        NumberZero()
+                NumberZero()
                 }.foregroundColor(.black)
                 Spacer()
                 Text("")
@@ -282,20 +339,13 @@ struct ContentView: View {
                         self.display = self.display + "."
                     }
                 }){
-                        ButtonCommata()
+                ButtonCommata()
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
-                    if self.x != 0.0 && self.y == 0.0 {
-                        self.y = Double(self.display)!
-                        var str = "\(self.setOperation(operation: self.clipboard))"
-                        if str.suffix(2) == ".0" {
-                            str = str.replacingOccurrences(of: ".0", with: "" , options: .literal, range: nil)
-                        }
-                        self.display = str
-                    }
+                self.equalsButtonPressed()
                 }){
-                        ButtonEquals()
+                ButtonEquals()
                 }.foregroundColor(.black)
                 Spacer()
                 }

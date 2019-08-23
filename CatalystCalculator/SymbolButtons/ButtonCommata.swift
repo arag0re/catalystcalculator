@@ -13,12 +13,11 @@ struct ButtonCommata: View {
         VStack{
             Image("Button")
                 .clipShape(Circle())
-                .overlay(
-                    Circle().stroke(Color.red,lineWidth: 9))
+                .overlay(Circle().stroke(Color.red,lineWidth: 9))
                 .shadow(radius: 5)
             Text(",")
-            .offset(x: 0, y: -73)
-            .foregroundColor(.red)
+                .offset(x: 0, y: -73)
+                .foregroundColor(.red)
                 .font(.largeTitle)
         }
     }

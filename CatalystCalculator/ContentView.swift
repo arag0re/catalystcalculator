@@ -78,7 +78,7 @@ struct ContentView: View {
         if self.x == 0.0 && self.y == 0.0 {
             self.x = Double(self.display)!
             self.display = "0"
-        } else if self.x != 0.0 && self.y == 0.0 {
+        } else if self.x != 0.0 && self.y == 0.0 && self.display != "0"{
             self.y = Double(self.display)!
             var str = "\(self.setOperation(operation: operation))"
             if str.suffix(2) == ".0" {
@@ -110,9 +110,8 @@ struct ContentView: View {
                 Spacer()
             }
             Spacer()
-            Text("")
-            Spacer()
             VStack{
+                Spacer()
             HStack {
                 Spacer()
                 Button(action: {
@@ -303,6 +302,7 @@ struct ContentView: View {
                 Spacer()
                 }
             }
+            
         }.background(Color.black)
     }
 }

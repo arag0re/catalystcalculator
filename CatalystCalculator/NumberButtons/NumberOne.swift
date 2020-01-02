@@ -13,11 +13,11 @@ struct NumberOne : View {
         VStack{
             Image("Button")
                 .clipShape(Circle())
-                .overlay(Circle().stroke(Color.red,lineWidth: 9))
+                .overlay(Circle().stroke(Color.black,lineWidth: 9))
                 .shadow(radius: 5)
             Text("1")
                 .offset(x: 0, y: -68)
-                .foregroundColor(.red)
+                .foregroundColor(.white)
                 .font(.largeTitle)
         }
     }

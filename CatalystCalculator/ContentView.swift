@@ -74,6 +74,7 @@ struct ContentView: View {
     }
     
     func operationButtonPressed(operation: String) {
+        self.resetButton = "AC"
         self.clipboard = operation
         if self.x == 0.0 && self.y == 0.0 {
             self.x = Double(self.display)!
@@ -101,7 +102,7 @@ struct ContentView: View {
     
     func numberButton(num: String){
         self.resetButton = "C"
-        if self.display == "0" || self.display == "-0"{
+        if self.display == "0" || self.display == "-0" {
             self.display = self.display.replacingOccurrences(of: "0", with: num , options: .literal, range: nil)
         } else {
             self.display = self.display + num
@@ -119,8 +120,11 @@ struct ContentView: View {
                 Spacer()
             }
             Spacer()
-            VStack{
-                Spacer()
+            HStack {
+            if UIDevice.current.orientation == .landscapeLeft {
+                VStack { Text("bla bla bla") }
+            }
+            VStack {
             HStack {
                 Spacer()
                 Button(action: {
@@ -129,7 +133,7 @@ struct ContentView: View {
                 ButtonReset()
                 Text(self.resetButton)
                     .offset(x: 0, y: -71)
-                    .foregroundColor(.purple)
+                    .foregroundColor(.gray)
                     .font(.largeTitle)
                 }.foregroundColor(.black)
                 Spacer()
@@ -265,9 +269,9 @@ struct ContentView: View {
                 ButtonEquals()
                 }.foregroundColor(.black)
                 Spacer()
+                    }
                 }
             }
-            
         }.background(Color.black)
     }
 }

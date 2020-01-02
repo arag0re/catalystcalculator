@@ -13,11 +13,11 @@ struct ButtonPercent: View {
         VStack{
             Image("Button")
                 .clipShape(Circle())
-                .overlay(Circle().stroke(Color.purple,lineWidth: 9))
+                .overlay(Circle().stroke(Color.gray,lineWidth: 9))
                 .shadow(radius: 5)
             Text("%")
                 .offset(x: 0, y: -71)
-                .foregroundColor(.purple)
+                .foregroundColor(.gray)
                 .font(.largeTitle)
         }
     }

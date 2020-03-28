@@ -9,14 +9,16 @@
 import SwiftUI
 
 struct ButtonReset: View {
-    @State var name: String = "AC"
     var body: some View {
         VStack{
             Image("Button")
                 .clipShape(Circle())
-                .overlay(Circle().stroke(Color.gray ,lineWidth: 9))
+                .overlay(Circle().stroke(Color.purple,lineWidth: 9))
                 .shadow(radius: 5)
-            
+            Text(ContentView().resetButton)
+                .offset(x: 0, y: -71)
+                .foregroundColor(.purple)
+                .font(.largeTitle)
         }
     }
 }

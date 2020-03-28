@@ -120,6 +120,10 @@ struct ContentView: View {
                 Spacer()
             }
             Spacer()
+            Text("")
+            Spacer()
+            Text("")
+            Spacer()
             HStack {
             if UIDevice.current.orientation == .landscapeLeft {
                 VStack { Text("bla bla bla") }
@@ -131,10 +135,6 @@ struct ContentView: View {
                 self.resetAllValues()
                 }){
                 ButtonReset()
-                Text(self.resetButton)
-                    .offset(x: 0, y: -71)
-                    .foregroundColor(.gray)
-                    .font(.largeTitle)
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {

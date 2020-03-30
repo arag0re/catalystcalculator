@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C846AC4524325AAC0056C5D4 /* NumberZero.swift in Sources */ = {isa = PBXBuildFile; fileRef = C846AC4424325AAC0056C5D4 /* NumberZero.swift */; };
 		C88F9E6B230D791500E0168E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9E6A230D791500E0168E /* AppDelegate.swift */; };
 		C88F9E6D230D791500E0168E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9E6C230D791500E0168E /* SceneDelegate.swift */; };
 		C88F9E6F230D791500E0168E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9E6E230D791500E0168E /* ContentView.swift */; };
@@ -15,16 +16,7 @@
 		C88F9E77230D791700E0168E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C88F9E75230D791700E0168E /* LaunchScreen.storyboard */; };
 		C88F9E82230D791700E0168E /* CatalystCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9E81230D791700E0168E /* CatalystCalculatorTests.swift */; };
 		C88F9E8D230D791700E0168E /* CatalystCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9E8C230D791700E0168E /* CatalystCalculatorUITests.swift */; };
-		C88F9E9B230D798600E0168E /* NumberNine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9E9A230D798600E0168E /* NumberNine.swift */; };
-		C88F9E9F230D7D0800E0168E /* NumberEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9E9E230D7D0800E0168E /* NumberEight.swift */; };
-		C88F9EA1230D7D1E00E0168E /* NumberSeven.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9EA0230D7D1E00E0168E /* NumberSeven.swift */; };
-		C88F9EA3230D7ED500E0168E /* NumberSix.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9EA2230D7ED500E0168E /* NumberSix.swift */; };
-		C88F9EA5230D7F0500E0168E /* NumberFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9EA4230D7F0500E0168E /* NumberFive.swift */; };
-		C88F9EA7230D7F3600E0168E /* NumberFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9EA6230D7F3600E0168E /* NumberFour.swift */; };
-		C88F9EA9230D7F6500E0168E /* NumberThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9EA8230D7F6500E0168E /* NumberThree.swift */; };
-		C88F9EAB230D7F8B00E0168E /* NumberTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9EAA230D7F8B00E0168E /* NumberTwo.swift */; };
-		C88F9EAD230D7FB300E0168E /* NumberZero.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9EAC230D7FB300E0168E /* NumberZero.swift */; };
-		C88F9EAF230D7FDB00E0168E /* NumberOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9EAE230D7FDB00E0168E /* NumberOne.swift */; };
+		C88F9E9F230D7D0800E0168E /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9E9E230D7D0800E0168E /* Number.swift */; };
 		C88F9EB2230D837D00E0168E /* ButtonCommata.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9EB1230D837D00E0168E /* ButtonCommata.swift */; };
 		C88F9EB4230D83F500E0168E /* ButtonEquals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9EB3230D83F500E0168E /* ButtonEquals.swift */; };
 		C88F9EB6230D858300E0168E /* ButtonPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9EB5230D858300E0168E /* ButtonPlus.swift */; };
@@ -54,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C846AC4424325AAC0056C5D4 /* NumberZero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberZero.swift; sourceTree = "<group>"; };
 		C88F9E67230D791500E0168E /* CatalystCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatalystCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C88F9E6A230D791500E0168E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C88F9E6C230D791500E0168E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,17 +61,8 @@
 		C88F9E88230D791700E0168E /* CatalystCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatalystCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C88F9E8C230D791700E0168E /* CatalystCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalystCalculatorUITests.swift; sourceTree = "<group>"; };
 		C88F9E8E230D791700E0168E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C88F9E9A230D798600E0168E /* NumberNine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberNine.swift; sourceTree = "<group>"; };
 		C88F9E9C230D7B3F00E0168E /* CatalystCalculator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CatalystCalculator.entitlements; sourceTree = "<group>"; };
-		C88F9E9E230D7D0800E0168E /* NumberEight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberEight.swift; sourceTree = "<group>"; };
-		C88F9EA0230D7D1E00E0168E /* NumberSeven.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberSeven.swift; sourceTree = "<group>"; };
-		C88F9EA2230D7ED500E0168E /* NumberSix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberSix.swift; sourceTree = "<group>"; };
-		C88F9EA4230D7F0500E0168E /* NumberFive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFive.swift; sourceTree = "<group>"; };
-		C88F9EA6230D7F3600E0168E /* NumberFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFour.swift; sourceTree = "<group>"; };
-		C88F9EA8230D7F6500E0168E /* NumberThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberThree.swift; sourceTree = "<group>"; };
-		C88F9EAA230D7F8B00E0168E /* NumberTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTwo.swift; sourceTree = "<group>"; };
-		C88F9EAC230D7FB300E0168E /* NumberZero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberZero.swift; sourceTree = "<group>"; };
-		C88F9EAE230D7FDB00E0168E /* NumberOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOne.swift; sourceTree = "<group>"; };
+		C88F9E9E230D7D0800E0168E /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
 		C88F9EB1230D837D00E0168E /* ButtonCommata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCommata.swift; sourceTree = "<group>"; };
 		C88F9EB3230D83F500E0168E /* ButtonEquals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonEquals.swift; sourceTree = "<group>"; };
 		C88F9EB5230D858300E0168E /* ButtonPlus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPlus.swift; sourceTree = "<group>"; };
@@ -181,16 +165,8 @@
 		C88F9E9D230D7CDC00E0168E /* NumberButtons */ = {
 			isa = PBXGroup;
 			children = (
-				C88F9E9A230D798600E0168E /* NumberNine.swift */,
-				C88F9E9E230D7D0800E0168E /* NumberEight.swift */,
-				C88F9EA0230D7D1E00E0168E /* NumberSeven.swift */,
-				C88F9EA2230D7ED500E0168E /* NumberSix.swift */,
-				C88F9EA4230D7F0500E0168E /* NumberFive.swift */,
-				C88F9EA6230D7F3600E0168E /* NumberFour.swift */,
-				C88F9EA8230D7F6500E0168E /* NumberThree.swift */,
-				C88F9EAA230D7F8B00E0168E /* NumberTwo.swift */,
-				C88F9EAE230D7FDB00E0168E /* NumberOne.swift */,
-				C88F9EAC230D7FB300E0168E /* NumberZero.swift */,
+				C846AC4424325AAC0056C5D4 /* NumberZero.swift */,
+				C88F9E9E230D7D0800E0168E /* Number.swift */,
 			);
 			path = NumberButtons;
 			sourceTree = "<group>";
@@ -342,28 +318,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C88F9EAF230D7FDB00E0168E /* NumberOne.swift in Sources */,
-				C88F9EA3230D7ED500E0168E /* NumberSix.swift in Sources */,
 				C88F9EC0230D891300E0168E /* ButtonReset.swift in Sources */,
 				C88F9EB2230D837D00E0168E /* ButtonCommata.swift in Sources */,
 				C88F9EBA230D87EF00E0168E /* ButtonMult.swift in Sources */,
-				C88F9EAD230D7FB300E0168E /* NumberZero.swift in Sources */,
 				C88F9EBE230D88D500E0168E /* ButtonPlusMinus.swift in Sources */,
 				C88F9E6B230D791500E0168E /* AppDelegate.swift in Sources */,
 				C88F9EB4230D83F500E0168E /* ButtonEquals.swift in Sources */,
 				C88F9EC2230D894400E0168E /* ButtonPercent.swift in Sources */,
 				C88F9E6D230D791500E0168E /* SceneDelegate.swift in Sources */,
-				C88F9EA7230D7F3600E0168E /* NumberFour.swift in Sources */,
-				C88F9E9B230D798600E0168E /* NumberNine.swift in Sources */,
-				C88F9E9F230D7D0800E0168E /* NumberEight.swift in Sources */,
-				C88F9EAB230D7F8B00E0168E /* NumberTwo.swift in Sources */,
+				C88F9E9F230D7D0800E0168E /* Number.swift in Sources */,
 				C88F9EB6230D858300E0168E /* ButtonPlus.swift in Sources */,
-				C88F9EA1230D7D1E00E0168E /* NumberSeven.swift in Sources */,
-				C88F9EA5230D7F0500E0168E /* NumberFive.swift in Sources */,
+				C846AC4524325AAC0056C5D4 /* NumberZero.swift in Sources */,
 				C88F9EBC230D882000E0168E /* ButtonDiv.swift in Sources */,
 				C88F9E6F230D791500E0168E /* ContentView.swift in Sources */,
 				C88F9EB8230D87CB00E0168E /* ButtonMinus.swift in Sources */,
-				C88F9EA9230D7F6500E0168E /* NumberThree.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

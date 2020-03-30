@@ -16,18 +16,19 @@ struct ContentView: View {
     @State var y = 0.0
     @State var clipboard = ""
     @State var resetButton = "AC"
+    @State var name: String = "AC"
     
     ///func that resets different parameters depending on state of reset-button
     func resetAllValues(){
-        if self.resetButton == "AC" {
+        if self.name == "AC" {
             self.display = "0"
             self.clipboard = ""
             self.afterCalcReset()
-            self.resetButton = "AC"
             print("all values were set to zero or empty String!")
         } else {
             self.display = "0"
-            self.resetButton = "AC"
+            self.name = "AC"
+            print("reset displayvalue to zero")
         }
     }
     
@@ -74,7 +75,6 @@ struct ContentView: View {
     }
     
     func operationButtonPressed(operation: String) {
-        self.resetButton = "AC"
         self.clipboard = operation
         if self.x == 0.0 && self.y == 0.0 {
             self.x = Double(self.display)!
@@ -101,7 +101,7 @@ struct ContentView: View {
     }
     
     func numberButton(num: String){
-        self.resetButton = "C"
+        self.name = "C"
         if self.display == "0" || self.display == "-0" {
             self.display = self.display.replacingOccurrences(of: "0", with: num , options: .literal, range: nil)
         } else {
@@ -110,6 +110,7 @@ struct ContentView: View {
     }
     
     var body: some View {
+       
         VStack {
             Spacer()
             HStack {
@@ -125,16 +126,13 @@ struct ContentView: View {
             Text("")
             Spacer()
             HStack {
-            if UIDevice.current.orientation == .landscapeLeft {
-                VStack { Text("bla bla bla") }
-            }
             VStack {
             HStack {
                 Spacer()
                 Button(action: {
                 self.resetAllValues()
                 }){
-                ButtonReset()
+                ButtonReset(name: self.$name)
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
@@ -162,19 +160,19 @@ struct ContentView: View {
                 Button(action: {
                 self.numberButton(num: "7")
                 }){
-                NumberSeven()
+                Number("7")
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
                 self.numberButton(num: "8")
                 }){
-                NumberEight()
+                Number("8")
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
                 self.numberButton(num: "9")
                 }){
-                NumberNine()
+                Number("9")
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
@@ -190,19 +188,19 @@ struct ContentView: View {
                 Button(action: {
                 self.numberButton(num: "4")
                 }){
-                NumberFour()
+                Number("4")
                 }.foregroundColor(.black)
                Spacer()
                 Button(action: {
                 self.numberButton(num: "5")
                 }){
-                NumberFive()
+                Number("5")
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
                 self.numberButton(num: "6")
                 }){
-                NumberSix()
+                Number("6")
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
@@ -218,19 +216,19 @@ struct ContentView: View {
                 Button(action: {
                 self.numberButton(num: "1")
                 }){
-                NumberOne()
+                Number("1")
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
                 self.numberButton(num: "2")
                 }){
-                NumberTwo()
+                Number("2")
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
                 self.numberButton(num: "3")
                 }){
-                NumberThree()
+                Number("3")
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {

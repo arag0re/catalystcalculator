@@ -85,6 +85,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C846AC462432FCA00056C5D4 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				C88F9EBF230D891300E0168E /* ButtonReset.swift */,
+				C88F9E9E230D7D0800E0168E /* Number.swift */,
+				C846AC4424325AAC0056C5D4 /* NumberZero.swift */,
+				C88F9EB3230D83F500E0168E /* OPButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		C88F9E5E230D791500E0168E = {
 			isa = PBXGroup;
 			children = (
@@ -108,10 +119,7 @@
 		C88F9E69230D791500E0168E /* CatalystCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				C846AC4424325AAC0056C5D4 /* NumberZero.swift */,
-				C88F9EBF230D891300E0168E /* ButtonReset.swift */,
-				C88F9EB3230D83F500E0168E /* OPButton.swift */,
-				C88F9E9E230D7D0800E0168E /* Number.swift */,
+				C846AC462432FCA00056C5D4 /* Buttons */,
 				C88F9E9C230D7B3F00E0168E /* CatalystCalculator.entitlements */,
 				C88F9E6A230D791500E0168E /* AppDelegate.swift */,
 				C88F9E6C230D791500E0168E /* SceneDelegate.swift */,

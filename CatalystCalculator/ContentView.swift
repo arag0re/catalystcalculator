@@ -15,7 +15,6 @@ struct ContentView: View {
     @State var x = 0.0
     @State var y = 0.0
     @State var clipboard = ""
-    @State var resetButton = "AC"
     @State var name: String = "AC"
     
     ///func that resets different parameters depending on state of reset-button
@@ -138,19 +137,19 @@ struct ContentView: View {
                 Button(action: {
                 self.plusMinusButtonPressed()
                 }){
-                ButtonPlusMinus()
+                OPButton("+/-",.purple,0,-71)
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
                 self.percentButtonPressed()
                 }){
-                ButtonPercent()
+                OPButton("%",.purple,0,-71)
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
                 self.operationButtonPressed(operation: "div")
                 }){
-                ButtonDiv()
+                OPButton("/", .orange,0,-71)
                 }.foregroundColor(.black)
                 Spacer()
             }
@@ -178,7 +177,7 @@ struct ContentView: View {
                 Button(action: {
                 self.operationButtonPressed(operation: "mult")
                 }){
-                ButtonMult()
+                OPButton("x", .orange,0,-71)
                 }.foregroundColor(.black)
                 Spacer()
             }
@@ -206,7 +205,7 @@ struct ContentView: View {
                 Button(action: {
                 self.operationButtonPressed(operation: "sub")
                 }){
-                ButtonMinus()
+                OPButton("-", .orange,0,-71)
                 }.foregroundColor(.black)
                 Spacer()
             }
@@ -234,7 +233,7 @@ struct ContentView: View {
                 Button(action: {
                 self.operationButtonPressed(operation: "add")
                 }){
-                ButtonPlus()
+                OPButton("+", .orange,0,-71)
                 }.foregroundColor(.black)
                 Spacer()
             }
@@ -248,7 +247,7 @@ struct ContentView: View {
                         self.display = self.display + "0"
                     }
                 }){
-                NumberZero()
+                NumberZero("0", .red)
                 }.foregroundColor(.black)
                 Spacer()
                 Text("")
@@ -258,13 +257,13 @@ struct ContentView: View {
                         self.display = self.display + "."
                     }
                 }){
-                ButtonCommata()
+                OPButton(",", .red, 0, -73)
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
                 self.equalsButtonPressed()
                 }){
-                ButtonEquals()
+                OPButton("=", .orange,0,-71)
                 }.foregroundColor(.black)
                 Spacer()
                     }

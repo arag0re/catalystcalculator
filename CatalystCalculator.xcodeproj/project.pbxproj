@@ -17,15 +17,8 @@
 		C88F9E82230D791700E0168E /* CatalystCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9E81230D791700E0168E /* CatalystCalculatorTests.swift */; };
 		C88F9E8D230D791700E0168E /* CatalystCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9E8C230D791700E0168E /* CatalystCalculatorUITests.swift */; };
 		C88F9E9F230D7D0800E0168E /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9E9E230D7D0800E0168E /* Number.swift */; };
-		C88F9EB2230D837D00E0168E /* ButtonCommata.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9EB1230D837D00E0168E /* ButtonCommata.swift */; };
-		C88F9EB4230D83F500E0168E /* ButtonEquals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9EB3230D83F500E0168E /* ButtonEquals.swift */; };
-		C88F9EB6230D858300E0168E /* ButtonPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9EB5230D858300E0168E /* ButtonPlus.swift */; };
-		C88F9EB8230D87CB00E0168E /* ButtonMinus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9EB7230D87CB00E0168E /* ButtonMinus.swift */; };
-		C88F9EBA230D87EF00E0168E /* ButtonMult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9EB9230D87EF00E0168E /* ButtonMult.swift */; };
-		C88F9EBC230D882000E0168E /* ButtonDiv.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9EBB230D882000E0168E /* ButtonDiv.swift */; };
-		C88F9EBE230D88D500E0168E /* ButtonPlusMinus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9EBD230D88D500E0168E /* ButtonPlusMinus.swift */; };
+		C88F9EB4230D83F500E0168E /* OPButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9EB3230D83F500E0168E /* OPButton.swift */; };
 		C88F9EC0230D891300E0168E /* ButtonReset.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9EBF230D891300E0168E /* ButtonReset.swift */; };
-		C88F9EC2230D894400E0168E /* ButtonPercent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9EC1230D894400E0168E /* ButtonPercent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,15 +56,8 @@
 		C88F9E8E230D791700E0168E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C88F9E9C230D7B3F00E0168E /* CatalystCalculator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CatalystCalculator.entitlements; sourceTree = "<group>"; };
 		C88F9E9E230D7D0800E0168E /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
-		C88F9EB1230D837D00E0168E /* ButtonCommata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCommata.swift; sourceTree = "<group>"; };
-		C88F9EB3230D83F500E0168E /* ButtonEquals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonEquals.swift; sourceTree = "<group>"; };
-		C88F9EB5230D858300E0168E /* ButtonPlus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPlus.swift; sourceTree = "<group>"; };
-		C88F9EB7230D87CB00E0168E /* ButtonMinus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMinus.swift; sourceTree = "<group>"; };
-		C88F9EB9230D87EF00E0168E /* ButtonMult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMult.swift; sourceTree = "<group>"; };
-		C88F9EBB230D882000E0168E /* ButtonDiv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDiv.swift; sourceTree = "<group>"; };
-		C88F9EBD230D88D500E0168E /* ButtonPlusMinus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPlusMinus.swift; sourceTree = "<group>"; };
+		C88F9EB3230D83F500E0168E /* OPButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPButton.swift; sourceTree = "<group>"; };
 		C88F9EBF230D891300E0168E /* ButtonReset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonReset.swift; sourceTree = "<group>"; };
-		C88F9EC1230D894400E0168E /* ButtonPercent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPercent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +108,10 @@
 		C88F9E69230D791500E0168E /* CatalystCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				C88F9EB0230D836900E0168E /* SymbolButtons */,
-				C88F9E9D230D7CDC00E0168E /* NumberButtons */,
+				C846AC4424325AAC0056C5D4 /* NumberZero.swift */,
+				C88F9EBF230D891300E0168E /* ButtonReset.swift */,
+				C88F9EB3230D83F500E0168E /* OPButton.swift */,
+				C88F9E9E230D7D0800E0168E /* Number.swift */,
 				C88F9E9C230D7B3F00E0168E /* CatalystCalculator.entitlements */,
 				C88F9E6A230D791500E0168E /* AppDelegate.swift */,
 				C88F9E6C230D791500E0168E /* SceneDelegate.swift */,
@@ -160,31 +148,6 @@
 				C88F9E8E230D791700E0168E /* Info.plist */,
 			);
 			path = CatalystCalculatorUITests;
-			sourceTree = "<group>";
-		};
-		C88F9E9D230D7CDC00E0168E /* NumberButtons */ = {
-			isa = PBXGroup;
-			children = (
-				C846AC4424325AAC0056C5D4 /* NumberZero.swift */,
-				C88F9E9E230D7D0800E0168E /* Number.swift */,
-			);
-			path = NumberButtons;
-			sourceTree = "<group>";
-		};
-		C88F9EB0230D836900E0168E /* SymbolButtons */ = {
-			isa = PBXGroup;
-			children = (
-				C88F9EB1230D837D00E0168E /* ButtonCommata.swift */,
-				C88F9EB5230D858300E0168E /* ButtonPlus.swift */,
-				C88F9EBD230D88D500E0168E /* ButtonPlusMinus.swift */,
-				C88F9EBF230D891300E0168E /* ButtonReset.swift */,
-				C88F9EC1230D894400E0168E /* ButtonPercent.swift */,
-				C88F9EB3230D83F500E0168E /* ButtonEquals.swift */,
-				C88F9EB7230D87CB00E0168E /* ButtonMinus.swift */,
-				C88F9EB9230D87EF00E0168E /* ButtonMult.swift */,
-				C88F9EBB230D882000E0168E /* ButtonDiv.swift */,
-			);
-			path = SymbolButtons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,19 +282,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C88F9EC0230D891300E0168E /* ButtonReset.swift in Sources */,
-				C88F9EB2230D837D00E0168E /* ButtonCommata.swift in Sources */,
-				C88F9EBA230D87EF00E0168E /* ButtonMult.swift in Sources */,
-				C88F9EBE230D88D500E0168E /* ButtonPlusMinus.swift in Sources */,
 				C88F9E6B230D791500E0168E /* AppDelegate.swift in Sources */,
-				C88F9EB4230D83F500E0168E /* ButtonEquals.swift in Sources */,
-				C88F9EC2230D894400E0168E /* ButtonPercent.swift in Sources */,
+				C88F9EB4230D83F500E0168E /* OPButton.swift in Sources */,
 				C88F9E6D230D791500E0168E /* SceneDelegate.swift in Sources */,
 				C88F9E9F230D7D0800E0168E /* Number.swift in Sources */,
-				C88F9EB6230D858300E0168E /* ButtonPlus.swift in Sources */,
 				C846AC4524325AAC0056C5D4 /* NumberZero.swift in Sources */,
-				C88F9EBC230D882000E0168E /* ButtonDiv.swift in Sources */,
 				C88F9E6F230D791500E0168E /* ContentView.swift in Sources */,
-				C88F9EB8230D87CB00E0168E /* ButtonMinus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

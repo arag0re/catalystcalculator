@@ -9,16 +9,22 @@
 import SwiftUI
 
 struct NumberZero : View {
+    var name: String
+    var color: Color
+    init(_ name: String,_ color: Color){
+        self.name = name
+        self.color = color
+    }
     var body: some View {
         VStack{
             Image("largeButton")
                 .clipShape(RoundedRectangle .init(cornerRadius: 33, style: .circular))
                 .overlay(RoundedRectangle.init(cornerRadius: 33, style: .circular)
-                    .stroke(Color.red,lineWidth: 19)
+                    .stroke(self.color,lineWidth: 19)
                     .clipShape(RoundedRectangle.init(cornerRadius: 33, style: .circular)))
                 .shadow(radius: 5)
-            Text("0")
-                .foregroundColor(.red)
+            Text(name)
+                .foregroundColor(self.color)
                 .offset(x: -33, y: -69)
                 .font(.largeTitle)
         }
@@ -28,7 +34,7 @@ struct NumberZero : View {
 #if DEBUG
 struct NumberZero_Previews : PreviewProvider {
     static var previews: some View {
-        NumberZero()
+        NumberZero("0", .red)
     }
 }
 #endif

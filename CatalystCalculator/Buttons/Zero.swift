@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct NumberZero : View {
+struct Zero : View {
     var name: String
     var color: Color
     init(_ name: String,_ color: Color){
@@ -32,9 +32,9 @@ struct NumberZero : View {
 }
 
 #if DEBUG
-struct NumberZero_Previews : PreviewProvider {
+struct Zero_Previews : PreviewProvider {
     static var previews: some View {
-        NumberZero("0", .red)
+        Zero("0", .red)
     }
 }
 #endif

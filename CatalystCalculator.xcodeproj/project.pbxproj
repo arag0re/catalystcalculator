@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C846AC4524325AAC0056C5D4 /* NumberZero.swift in Sources */ = {isa = PBXBuildFile; fileRef = C846AC4424325AAC0056C5D4 /* NumberZero.swift */; };
+		C846AC4524325AAC0056C5D4 /* Zero.swift in Sources */ = {isa = PBXBuildFile; fileRef = C846AC4424325AAC0056C5D4 /* Zero.swift */; };
 		C88F9E6B230D791500E0168E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9E6A230D791500E0168E /* AppDelegate.swift */; };
 		C88F9E6D230D791500E0168E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9E6C230D791500E0168E /* SceneDelegate.swift */; };
 		C88F9E6F230D791500E0168E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9E6E230D791500E0168E /* ContentView.swift */; };
@@ -16,9 +16,9 @@
 		C88F9E77230D791700E0168E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C88F9E75230D791700E0168E /* LaunchScreen.storyboard */; };
 		C88F9E82230D791700E0168E /* CatalystCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9E81230D791700E0168E /* CatalystCalculatorTests.swift */; };
 		C88F9E8D230D791700E0168E /* CatalystCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9E8C230D791700E0168E /* CatalystCalculatorUITests.swift */; };
-		C88F9E9F230D7D0800E0168E /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9E9E230D7D0800E0168E /* Number.swift */; };
+		C88F9E9F230D7D0800E0168E /* Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9E9E230D7D0800E0168E /* Numbers.swift */; };
 		C88F9EB4230D83F500E0168E /* OPButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9EB3230D83F500E0168E /* OPButton.swift */; };
-		C88F9EC0230D891300E0168E /* ButtonReset.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9EBF230D891300E0168E /* ButtonReset.swift */; };
+		C88F9EC0230D891300E0168E /* ResetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9EBF230D891300E0168E /* ResetButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C846AC4424325AAC0056C5D4 /* NumberZero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberZero.swift; sourceTree = "<group>"; };
+		C846AC4424325AAC0056C5D4 /* Zero.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; name = Zero.swift; path = CatalystCalculator/Buttons/Zero.swift; sourceTree = SOURCE_ROOT; };
 		C88F9E67230D791500E0168E /* CatalystCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatalystCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C88F9E6A230D791500E0168E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C88F9E6C230D791500E0168E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,9 +55,9 @@
 		C88F9E8C230D791700E0168E /* CatalystCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalystCalculatorUITests.swift; sourceTree = "<group>"; };
 		C88F9E8E230D791700E0168E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C88F9E9C230D7B3F00E0168E /* CatalystCalculator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CatalystCalculator.entitlements; sourceTree = "<group>"; };
-		C88F9E9E230D7D0800E0168E /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
-		C88F9EB3230D83F500E0168E /* OPButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPButton.swift; sourceTree = "<group>"; };
-		C88F9EBF230D891300E0168E /* ButtonReset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonReset.swift; sourceTree = "<group>"; };
+		C88F9E9E230D7D0800E0168E /* Numbers.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Numbers.swift; path = CatalystCalculator/Buttons/Numbers.swift; sourceTree = SOURCE_ROOT; };
+		C88F9EB3230D83F500E0168E /* OPButton.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = OPButton.swift; path = CatalystCalculator/Buttons/OPButton.swift; sourceTree = SOURCE_ROOT; };
+		C88F9EBF230D891300E0168E /* ResetButton.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = ResetButton.swift; path = CatalystCalculator/Buttons/ResetButton.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,13 +88,14 @@
 		C846AC462432FCA00056C5D4 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				C88F9EBF230D891300E0168E /* ButtonReset.swift */,
-				C88F9E9E230D7D0800E0168E /* Number.swift */,
-				C846AC4424325AAC0056C5D4 /* NumberZero.swift */,
+				C88F9EBF230D891300E0168E /* ResetButton.swift */,
+				C88F9E9E230D7D0800E0168E /* Numbers.swift */,
+				C846AC4424325AAC0056C5D4 /* Zero.swift */,
 				C88F9EB3230D83F500E0168E /* OPButton.swift */,
 			);
-			path = Buttons;
-			sourceTree = "<group>";
+			name = Buttons;
+			path = /Users/antonstadie/Developer/catalystcalculator/CatalystCalculator/Buttons;
+			sourceTree = "<absolute>";
 		};
 		C88F9E5E230D791500E0168E = {
 			isa = PBXGroup;
@@ -289,12 +290,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C88F9EC0230D891300E0168E /* ButtonReset.swift in Sources */,
+				C88F9EC0230D891300E0168E /* ResetButton.swift in Sources */,
 				C88F9E6B230D791500E0168E /* AppDelegate.swift in Sources */,
 				C88F9EB4230D83F500E0168E /* OPButton.swift in Sources */,
 				C88F9E6D230D791500E0168E /* SceneDelegate.swift in Sources */,
-				C88F9E9F230D7D0800E0168E /* Number.swift in Sources */,
-				C846AC4524325AAC0056C5D4 /* NumberZero.swift in Sources */,
+				C88F9E9F230D7D0800E0168E /* Numbers.swift in Sources */,
+				C846AC4524325AAC0056C5D4 /* Zero.swift in Sources */,
 				C88F9E6F230D791500E0168E /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,10 +462,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CatalystCalculator/CatalystCalculator.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"CatalystCalculator/Preview Content\"";
-				DEVELOPMENT_TEAM = CA9S9H5GH4;
+				DEVELOPMENT_TEAM = V77JQ7Q9V5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CatalystCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -484,10 +486,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CatalystCalculator/CatalystCalculator.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"CatalystCalculator/Preview Content\"";
-				DEVELOPMENT_TEAM = CA9S9H5GH4;
+				DEVELOPMENT_TEAM = V77JQ7Q9V5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CatalystCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

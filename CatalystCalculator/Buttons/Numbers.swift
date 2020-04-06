@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct Number : View {
+struct Numbers : View {
     var name: String
     init(_ name: String){
         self.name = name
@@ -28,9 +28,9 @@ struct Number : View {
 }
 
 #if DEBUG
-struct Number_Previews : PreviewProvider {
+struct Numbers_Previews : PreviewProvider {
     static var previews: some View {
-        Number("8")
+        Numbers("8")
     }
 }
 #endif

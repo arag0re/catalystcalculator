@@ -109,7 +109,6 @@ struct ContentView: View {
     }
     
     var body: some View {
-       
         VStack {
             Spacer()
             HStack {
@@ -159,19 +158,19 @@ struct ContentView: View {
                 Button(action: {
                 self.numberButton(num: "7")
                 }){
-                Number("7")
+                Numbers("7")
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
                 self.numberButton(num: "8")
                 }){
-                Number("8")
+                Numbers("8")
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
                 self.numberButton(num: "9")
                 }){
-                Number("9")
+                Numbers("9")
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
@@ -187,19 +186,19 @@ struct ContentView: View {
                 Button(action: {
                 self.numberButton(num: "4")
                 }){
-                Number("4")
+                Numbers("4")
                 }.foregroundColor(.black)
                Spacer()
                 Button(action: {
                 self.numberButton(num: "5")
                 }){
-                Number("5")
+                Numbers("5")
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
                 self.numberButton(num: "6")
                 }){
-                Number("6")
+                Numbers("6")
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
@@ -215,19 +214,19 @@ struct ContentView: View {
                 Button(action: {
                 self.numberButton(num: "1")
                 }){
-                Number("1")
+                Numbers("1")
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
                 self.numberButton(num: "2")
                 }){
-                Number("2")
+                Numbers("2")
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
                 self.numberButton(num: "3")
                 }){
-                Number("3")
+                Numbers("3")
                 }.foregroundColor(.black)
                 Spacer()
                 Button(action: {
@@ -247,7 +246,7 @@ struct ContentView: View {
                         self.display = self.display + "0"
                     }
                 }){
-                NumberZero("0", .red)
+                Zero("0", .red)
                 }.foregroundColor(.black)
                 Spacer()
                 Text("")

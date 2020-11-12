@@ -11,10 +11,10 @@ import SwiftUI
 struct ButtonReset: View {
     @Binding var name: String
     var body: some View {
-        VStack{
+        VStack {
             Image("Button")
                 .clipShape(Circle())
-                .overlay(Circle().stroke(Color.purple,lineWidth: 9))
+                .overlay(Circle().stroke(Color.purple, lineWidth: 9))
                 .shadow(radius: 5)
             Text(name)
                 .offset(x: 0, y: -71)
@@ -22,7 +22,7 @@ struct ButtonReset: View {
                 .font(.largeTitle)
         }
     }
-    
+
     func setName(String: String) {
         name = String
     }

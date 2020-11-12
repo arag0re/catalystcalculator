@@ -13,17 +13,18 @@ struct OPButton: View {
     var color: Color
     var x: CGFloat
     var y: CGFloat
-    init(_ name: String,_ color: Color,_ x: CGFloat, _ y: CGFloat){
+    init(_ name: String, _ color: Color, _ x: CGFloat, _ y: CGFloat) {
         self.name = name
         self.color = color
         self.x = x
         self.y = y
     }
+
     var body: some View {
-        VStack{
+        VStack {
             Image("Button")
                 .clipShape(Circle())
-                .overlay(Circle().stroke(self.color,lineWidth: 9))
+                .overlay(Circle().stroke(self.color, lineWidth: 9))
                 .shadow(radius: 5)
             Text(name)
                 .offset(x: x, y: y)
@@ -35,6 +36,6 @@ struct OPButton: View {
 
 struct OPButton_Previews: PreviewProvider {
     static var previews: some View {
-        OPButton("=",.orange, 0,-71)
+        OPButton("=", .orange, 0, -71)
     }
 }

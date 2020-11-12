@@ -8,20 +8,21 @@
 
 import SwiftUI
 
-struct Zero : View {
+struct Zero: View {
     var name: String
     var color: Color
-    init(_ name: String,_ color: Color){
+    init(_ name: String, _ color: Color) {
         self.name = name
         self.color = color
     }
+
     var body: some View {
-        VStack{
+        VStack {
             Image("largeButton")
-                .clipShape(RoundedRectangle .init(cornerRadius: 33, style: .circular))
-                .overlay(RoundedRectangle.init(cornerRadius: 33, style: .circular)
-                    .stroke(self.color,lineWidth: 19)
-                    .clipShape(RoundedRectangle.init(cornerRadius: 33, style: .circular)))
+                .clipShape(RoundedRectangle(cornerRadius: 33, style: .circular))
+                .overlay(RoundedRectangle(cornerRadius: 33, style: .circular)
+                    .stroke(self.color, lineWidth: 19)
+                    .clipShape(RoundedRectangle(cornerRadius: 33, style: .circular)))
                 .shadow(radius: 5)
             Text(name)
                 .foregroundColor(self.color)
@@ -32,10 +33,9 @@ struct Zero : View {
 }
 
 #if DEBUG
-struct Zero_Previews : PreviewProvider {
-    static var previews: some View {
-        Zero("0", .red)
+    struct Zero_Previews: PreviewProvider {
+        static var previews: some View {
+            Zero("0", .red)
+        }
     }
-}
 #endif
-

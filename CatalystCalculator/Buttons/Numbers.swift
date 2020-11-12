@@ -8,16 +8,17 @@
 
 import SwiftUI
 
-struct Numbers : View {
+struct Numbers: View {
     var name: String
-    init(_ name: String){
+    init(_ name: String) {
         self.name = name
     }
+
     var body: some View {
-        VStack{
+        VStack {
             Image("Button")
                 .clipShape(Circle())
-                .overlay(Circle().stroke(Color.red,lineWidth: 9))
+                .overlay(Circle().stroke(Color.red, lineWidth: 9))
                 .shadow(radius: 5)
             Text(name)
                 .offset(x: 0, y: -68)
@@ -28,9 +29,9 @@ struct Numbers : View {
 }
 
 #if DEBUG
-struct Numbers_Previews : PreviewProvider {
-    static var previews: some View {
-        Numbers("8")
+    struct Numbers_Previews: PreviewProvider {
+        static var previews: some View {
+            Numbers("8")
+        }
     }
-}
 #endif

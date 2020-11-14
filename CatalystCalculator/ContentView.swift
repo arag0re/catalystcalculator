@@ -23,6 +23,7 @@ struct ContentView: View {
         if name == "AC" {
             displayCopy = "0"
             display = "0"
+            backup = "0"
             clipboard = ""
             afterCalcReset()
             print("all values were set to zero or empty String!")

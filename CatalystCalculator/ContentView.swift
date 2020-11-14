@@ -12,12 +12,11 @@ struct ContentView: View {
     /// all variables needed for catalystcalculator
     @State var display: String = "0"
     @State var displayCopy: String = "0"
-    @State var backup: String =  "0"
+    @State var backup: String = "0"
     @State var x = 0.0
     @State var y = 0.0
     @State var clipboard = ""
     @State var name: String = "AC"
-  
 
     /// func that resets different parameters depending on state of reset-button
     func resetAllValues() {
@@ -37,7 +36,6 @@ struct ContentView: View {
 
     /// reset the calc-variables so that the intialization doesn't go wrong
     func afterCalcReset() {
-        
         x = 0.0
         y = 0.0
     }
@@ -123,7 +121,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Spacer()
-                .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 200, alignment: /*@START_MENU_TOKEN@*/ .center/*@END_MENU_TOKEN@*/)
             HStack {
                 Spacer()
                 Text(self.displayCopy)
@@ -133,7 +131,7 @@ struct ContentView: View {
                 Spacer()
             }
             Spacer()
-                .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 166, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 166, alignment: /*@START_MENU_TOKEN@*/ .center/*@END_MENU_TOKEN@*/)
             HStack {
                 Spacer()
                 VStack(spacing: -20) {
@@ -165,7 +163,7 @@ struct ContentView: View {
                         Spacer()
                     }
                     Spacer()
-                        .frame(width: 33, height: -30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .frame(width: 33, height: -30, alignment: /*@START_MENU_TOKEN@*/ .center/*@END_MENU_TOKEN@*/)
                     HStack {
                         Spacer()
                         Button(action: {
@@ -194,7 +192,7 @@ struct ContentView: View {
                         Spacer()
                     }
                     Spacer()
-                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: -30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: -30, alignment: /*@START_MENU_TOKEN@*/ .center/*@END_MENU_TOKEN@*/)
                     HStack {
                         Spacer()
                         Button(action: {
@@ -223,7 +221,7 @@ struct ContentView: View {
                         Spacer()
                     }
                     Spacer()
-                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: -20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: -20, alignment: /*@START_MENU_TOKEN@*/ .center/*@END_MENU_TOKEN@*/)
                     HStack {
                         Spacer()
                         Button(action: {
@@ -252,7 +250,7 @@ struct ContentView: View {
                         Spacer()
                     }
                     Spacer()
-                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: -40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: -40, alignment: /*@START_MENU_TOKEN@*/ .center/*@END_MENU_TOKEN@*/)
                     HStack {
                         Spacer()
                         Button(action: {

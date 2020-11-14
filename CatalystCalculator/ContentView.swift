@@ -10,20 +10,25 @@ import SwiftUI
 
 struct ContentView: View {
     /// all variables needed for catalystcalculator
-    @State var display = "0"
+    @State var display: String = "0"
+    @State var displayCopy: String = "0"
+    @State var backup: String =  "0"
     @State var x = 0.0
     @State var y = 0.0
     @State var clipboard = ""
     @State var name: String = "AC"
+  
 
     /// func that resets different parameters depending on state of reset-button
     func resetAllValues() {
         if name == "AC" {
+            displayCopy = "0"
             display = "0"
             clipboard = ""
             afterCalcReset()
             print("all values were set to zero or empty String!")
         } else {
+            displayCopy = backup
             display = "0"
             name = "AC"
             print("reset displayvalue to zero")
@@ -32,6 +37,7 @@ struct ContentView: View {
 
     /// reset the calc-variables so that the intialization doesn't go wrong
     func afterCalcReset() {
+        
         x = 0.0
         y = 0.0
     }
@@ -48,14 +54,17 @@ struct ContentView: View {
             default: break
             }
         }
+        backup = String(returnval!).replacingOccurrences(of: ".0", with: "", options: .literal, range: nil)
         return returnval!
     }
 
     func plusMinusButtonPressed() {
         if !display.contains("-"), display != "" {
             display = "-" + display
+            displayCopy = display
         } else if display.contains("-") {
             display = display.replacingOccurrences(of: "-", with: "", options: .literal, range: nil)
+            displayCopy = display
         }
     }
 
@@ -68,6 +77,7 @@ struct ContentView: View {
                 str = str.replacingOccurrences(of: ".0", with: "", options: .literal, range: nil)
             }
             display = str
+            displayCopy = str
         }
     }
 
@@ -83,6 +93,7 @@ struct ContentView: View {
                 str = str.replacingOccurrences(of: ".0", with: "", options: .literal, range: nil)
             }
             display = str
+            displayCopy = display
         }
     }
 
@@ -94,6 +105,7 @@ struct ContentView: View {
                 str = str.replacingOccurrences(of: ".0", with: "", options: .literal, range: nil)
             }
             display = str
+            displayCopy = display
         }
     }
 
@@ -101,28 +113,30 @@ struct ContentView: View {
         name = "C"
         if display == "0" || display == "-0" {
             display = display.replacingOccurrences(of: "0", with: num, options: .literal, range: nil)
+            displayCopy = display
         } else {
             display = display + num
+            displayCopy = display
         }
     }
 
     var body: some View {
         VStack {
             Spacer()
+                .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             HStack {
                 Spacer()
-                Text(self.display)
-                    .font(.largeTitle)
+                Text(self.displayCopy)
+                    .font(.system(size: 36))
+                    .fontWeight(.bold)
                     .foregroundColor(.white)
                 Spacer()
             }
             Spacer()
-            Text("")
-            Spacer()
-            Text("")
-            Spacer()
+                .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 166, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             HStack {
-                VStack {
+                Spacer()
+                VStack(spacing: -20) {
                     HStack {
                         Spacer()
                         Button(action: {
@@ -151,6 +165,7 @@ struct ContentView: View {
                         Spacer()
                     }
                     Spacer()
+                        .frame(width: 33, height: -30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     HStack {
                         Spacer()
                         Button(action: {
@@ -179,6 +194,7 @@ struct ContentView: View {
                         Spacer()
                     }
                     Spacer()
+                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: -30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     HStack {
                         Spacer()
                         Button(action: {
@@ -207,6 +223,7 @@ struct ContentView: View {
                         Spacer()
                     }
                     Spacer()
+                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: -20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     HStack {
                         Spacer()
                         Button(action: {
@@ -235,6 +252,7 @@ struct ContentView: View {
                         Spacer()
                     }
                     Spacer()
+                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: -40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     HStack {
                         Spacer()
                         Button(action: {
@@ -264,6 +282,7 @@ struct ContentView: View {
                         Spacer()
                     }
                 }
+                Spacer()
             }
         }.background(Color.black)
     }
